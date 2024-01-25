@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: desafio10-app
+spec:
+  destination:
+    name: ''
+    namespace: kube-system
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: Kubernetes
+    repoURL: 'https://github.com/monicaafg/desafio10.git'
+    targetRevision: HEAD
+  sources: []
+  project: bootcamp-devops
