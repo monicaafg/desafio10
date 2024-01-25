@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: appjava-secret
+type: Opaque
+data:
+  username: dHVfdXNlcm5hbWU=
+  password: dHVfcGFzc3dvcmQ=
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: appjava-configmap
+data:
+  config.properties: |
+    key1=value1
+    key2=value2
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appjava-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appjava
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: appjava
+    spec:
+      containers:
+      - name: appjava-container
+        image: lucaseveron/appjava:v1.0
+        ports:
+        - containerPort: 80
+        envFrom:
+        - secretRef:
+            name: appjava-secret
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: appjava-configmap
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: appjava-service
+spec:
+  selector:
+    app: appjava
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
