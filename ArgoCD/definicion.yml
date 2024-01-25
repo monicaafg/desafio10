@@ -8,7 +8,7 @@ spec:
     namespace: kube-system
     server: 'https://kubernetes.default.svc'
   source:
-    path: Kubernetes
+    path: kubernetes
     repoURL: 'https://github.com/monicaafg/desafio10.git'
     targetRevision: HEAD
   sources: []
