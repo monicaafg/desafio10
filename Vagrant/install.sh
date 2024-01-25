@@ -55,7 +55,7 @@ snap install microk8s --classic
 microk8s status --wait-ready
 microk8s enable registry storage dns ingress
 snap install kubectl --classic
-#sudo usermod -aG microk8s vagrant
+sudo usermod -aG microk8s vagrant
 mkdir -p /root/.kube
 microk8s config > /root/.kube/config
 kubectl create namespace argocd

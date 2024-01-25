@@ -10,6 +10,6 @@ spec:
   source:
     path: kubernetes
     repoURL: 'https://github.com/monicaafg/desafio10.git'
-    targetRevision: HEAD
+    targetRevision: main
   sources: []
-  project: bootcamp-devops
+  project: default

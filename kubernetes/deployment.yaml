@@ -13,7 +13,7 @@ kind: ConfigMap
 metadata:
   name: appjava-configmap
 data:
-  config.properties: |
+  config.properties: 
     key1=value1
     key2=value2
 
