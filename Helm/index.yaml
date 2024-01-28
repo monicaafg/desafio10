@@ -3,12 +3,12 @@ entries:
   devopsjavachart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-01-27T17:19:43.9613657-03:00"
+    created: "2024-01-28T16:15:28.6847201-03:00"
     description: A Helm chart for Kubernetes
-    digest: 33782c65c07e5ffbc66afcea7bc217d62bdd9c4b947ee17f1bff304a32d21c84
+    digest: 082c877d568e17498ca2db60f5316aae12a4cb2e434ea68331c678f75bc0c9a9
     name: devopsjavachart
     type: application
     urls:
     - charts/devopsjavachart-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-27T17:19:43.960232-03:00"
+generated: "2024-01-28T16:15:28.683316-03:00"
