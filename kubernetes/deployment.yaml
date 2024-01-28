@@ -24,7 +24,7 @@ kind: Deployment
 metadata:
   name: appjava-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: appjava
