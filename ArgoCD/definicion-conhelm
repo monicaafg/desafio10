@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: desafio10-conhelm
+spec:
+  destination:
+    name: ''
+    namespace: javaapphelm
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://monicaafg.github.io/desafio10/Helm'
+    targetRevision: 0.1.0
+    chart: devopsjavachart
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
